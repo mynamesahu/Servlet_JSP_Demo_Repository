@@ -58,7 +58,7 @@ public class LoginServlet extends HttpServlet {
 			
 		} else {
 			
-					out.println("Un-authorized Login");
+					out.println("Un-authorized Login. Log in with valid user name and password");
 		}
 	
 	
