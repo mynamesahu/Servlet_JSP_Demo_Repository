@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
 		
 		if ( userName.equals("Sambit")  &&  password.equals("pass123")  ) {
 			
-					out.println("Welcome " + userName);
+					out.println("Welcome " + userName + " to my Project");
 					//response.sendRedirect("success.jsp");
 					//request.getRequestDispatcher("success.jsp");
 			
