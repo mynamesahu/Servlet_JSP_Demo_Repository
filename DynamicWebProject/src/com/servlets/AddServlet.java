@@ -9,40 +9,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
 
-
+@WebServlet("/add")
+public class AddServlet extends HttpServlet {
 	
+//	addNumbers() {
+//		
+//	}
+//	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String userName = request.getParameter("useName");
-		String password = request.getParameter("password");
+		int num1 = Integer.parseInt(request.getParameter("num1"));
+		int num2 = Integer.parseInt(request.getParameter("num2"));		
 		
+		int result = num1 + num2;
 		PrintWriter out = response.getWriter();
 		
+		out.println("sum = " +result);
 		
 		
-		if ( userName.equals("Sambit")  &&  password.equals("pass123")  ) {
+		
 			
-					out.println("Welcome " + userName + " to my project.");
-					//response.sendRedirect("success.jsp");
-					//request.getRequestDispatcher("success.jsp");
-			
-		} else {
-			
-					out.println("Un-authorized Login. Please Log in with valid user name and password");
-		}
-	
-	
 	}
-	
+
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				
 		
 		doGet(request, response);
-			
+		
 		
 	}
 
