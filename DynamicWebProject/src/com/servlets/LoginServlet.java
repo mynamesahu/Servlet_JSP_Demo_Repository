@@ -35,8 +35,8 @@ public class LoginServlet extends HttpServlet {
 					
 					//Calling another servlet from this servlet
 					
-					//1- RequestDispatcher
-					//----------------------
+					//1- using RequestDispatcher
+					//---------------------------
 					
 					//Put the data in the request object before dispatching the original request to another servlet "AddServlet"
 					req.setAttribute("userName", userName);
