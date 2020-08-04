@@ -13,31 +13,24 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/add")
 public class AddServlet extends HttpServlet {
 	
-//	addNumbers() {
-//		
-//	}
-//	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
-		int num1 = Integer.parseInt(request.getParameter("num1"));
-		int num2 = Integer.parseInt(request.getParameter("num2"));		
+		//Retrieve the data from the request object and Cast to string
+		String userName = (String)req.getAttribute("userName");
 		
-		int result = num1 + num2;
-		PrintWriter out = response.getWriter();
+		//Get the Writer object referenced by PrintWriter
+		PrintWriter out = res.getWriter();
 		
-		out.println("sum = " +result);
-		
-		
-		
-			
+		//Print the data to the client browser via the Writer object
+		out.println("The user logged in is : "+userName+" and then forwarded by LoginServlet to perform add operation");
+		//out.println("sum = " +result);
+	
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		doGet(request, response);
-		
-		
 	}
 
 }
