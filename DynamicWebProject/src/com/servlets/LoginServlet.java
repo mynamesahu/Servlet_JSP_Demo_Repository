@@ -41,15 +41,15 @@ public class LoginServlet extends HttpServlet {
 					//1- Using RequestDispatcher
 					//---------------------------
 					
-//						//Put the data in the request object 
-//						req.setAttribute("userName", userName);
-//						
-//						//Get the RequestDispatcher object 
-//						RequestDispatcher rd = req.getRequestDispatcher("reqDispatch");					// where 'reqDispatch' is the url-pattern for the servlet (ReqDispatchedServlet) 
-//																										// as described in "web.xml" or as mentioned in the "ReqDispatchedServlet" servlet file itself as an "annotation"
-//						
-//						//Dispatch the original request to another servlet ("ReqDispatchedServet")
-//						rd.forward(req, res);
+						//Put the data in the request object 
+						req.setAttribute("userName", userName);
+						
+						//Get the RequestDispatcher object 
+						RequestDispatcher rd = req.getRequestDispatcher("reqDispatch");					// where 'reqDispatch' is the url-pattern for the servlet (ReqDispatchedServlet) 
+																										// as described in "web.xml" or as mentioned in the "ReqDispatchedServlet" servlet file itself as an "annotation"
+						
+						//Dispatch the original request to another servlet ("ReqDispatchedServet")
+						rd.forward(req, res);
 							
 							
 					
@@ -61,7 +61,8 @@ public class LoginServlet extends HttpServlet {
 					//-------------------------------------------
 					
 //						//Redirect the request to another servlet ("ReqRedirectedServlet1") modifying the URL with the user data being passed as a query string
-//						res.sendRedirect("reqRedirected1?userName="+userName);							
+//						res.sendRedirect("reqRedirected1?userName="+userName);							// where 'reqRedirected1' is the url-pattern for the servlet (ReqRedirectedServlet1) 
+//																										// as described in "web.xml" or as mentioned in the "ReqRedirectedServlet1" servlet file itself as an "annotation"					
 					
 					
 					
@@ -101,16 +102,16 @@ public class LoginServlet extends HttpServlet {
 							so that the server recognises the request from the identity of its Cookie (irrespective of the servlet that processes the request).
 						*/
 						
-						//Create a Cookie object by passing the cookie name and cookie value to its constructor
-						Cookie cookie = new Cookie("userName",userName);											
-																													
-						
-						//Add the cookie to the response object (which will be sent to the client)
-						res.addCookie(cookie);
-						
-						//Redirect the request to the servlet("ReqRedirectedServlet3") and the cookie object is sent implicitly
-						res.sendRedirect("reqRedirected3");
-		
+//						//Create a Cookie object by passing the cookie name and cookie value to its constructor
+//						Cookie cookie = new Cookie("userName",userName);											
+//																													
+//						
+//						//Add the cookie to the response object (which will be sent to the client)
+//						res.addCookie(cookie);
+//						
+//						//Redirect the request to the servlet("ReqRedirectedServlet3") and the cookie object is sent implicitly
+//						res.sendRedirect("reqRedirected3");
+	
 		
 		} else { // if the log in is not a valid User 
 			
