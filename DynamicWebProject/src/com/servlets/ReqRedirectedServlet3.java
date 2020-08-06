@@ -44,7 +44,7 @@ public class ReqRedirectedServlet3 extends HttpServlet {
 		
 		
 		//Print the data to the client browser via the PrintWriter object reference "out"
-		out.println(" The user logged in is : "+userName+" and redirected to this servlet using sendRedirect - Cookies");
+		out.println(" The user logged in is : "+userName+" and redirected to this servlet(\"ReqRedirectedServet3\") using sendRedirect - Cookies");
 
 	}
 

@@ -60,8 +60,8 @@ public class LoginServlet extends HttpServlet {
 					//2- Using sendRedirect with "URL Re-writing"
 					//-------------------------------------------
 					
-						//Redirect the request to another servlet ("ReqRedirectedServlet1") modifying the URL with the user data being passed as a query string 
-						res.sendRedirect("reqRedirected1?userName="+userName);							
+//						//Redirect the request to another servlet ("ReqRedirectedServlet1") modifying the URL with the user data being passed as a query string
+//						res.sendRedirect("reqRedirected1?userName="+userName);							
 					
 					
 					
@@ -95,20 +95,21 @@ public class LoginServlet extends HttpServlet {
 					//------------------------------------
 						/*
 							When the client sends a request to the server, the server sends a response to the client, 
-							and the response object contains a Cookie (unique ID)
+							and the response object contains a Cookie (unique ID).
 							
-							After some time, when the client sends request to the server again, it sends that cookie to the server.
-							so that the server recognises the earlier request by this cookie
+							After some time, when the client sends request to the server again, the Cookie object is also to the server implicitly.
+							so that the server recognises the request from the identity of its Cookie (irrespective of the servlet that processes the request).
 						*/
 						
-//						//Create a cookie initialized with the user data
-//						Cookie cookie = new Cookie("userName",userName);
-//						
-//						//Add the cookie to the response object (which will be sent to the client)
-//						res.addCookie(cookie);
-//						
-//						//Redirect the request to the servlet("ReqRedirectedServlet3") and the cookie object is sent implicitly
-//						res.sendRedirect("reqRedirected3");
+						//Create a Cookie object by passing the cookie name and cookie value to its constructor
+						Cookie cookie = new Cookie("userName",userName);											
+																													
+						
+						//Add the cookie to the response object (which will be sent to the client)
+						res.addCookie(cookie);
+						
+						//Redirect the request to the servlet("ReqRedirectedServlet3") and the cookie object is sent implicitly
+						res.sendRedirect("reqRedirected3");
 		
 		
 		} else { // if the log in is not a valid User 

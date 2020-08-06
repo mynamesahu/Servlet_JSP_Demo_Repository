@@ -17,7 +17,7 @@ public class ReqRedirectedServlet1 extends HttpServlet {
    
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
-		//Retrieve the data from the request object and Cast to string
+		//Retrieve the data from the URL query string
 		String userName = (String)req.getParameter("userName");
 		
 		
@@ -28,7 +28,7 @@ public class ReqRedirectedServlet1 extends HttpServlet {
 		
 		
 		//Print the data to the client browser via the PrintWriter object reference "out"
-		out.println(" The user logged in is : "+userName+" and redirected to this servlet using sendRedirect - URL Rewriting");
+		out.println(" The user logged in is : "+userName+" and redirected to this servlet(\"ReqRedirectedServet1\") using sendRedirect - URL Rewriting");
 
 	}
 

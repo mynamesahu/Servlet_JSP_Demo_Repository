@@ -17,7 +17,7 @@ public class ReqRedirectedServlet2 extends HttpServlet {
     //doGet() method
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
-		//Retrieve the data from the request object and Cast to string
+		//Retrieve the data from the session object
 		HttpSession session = req.getSession();
 		String userName = (String)session.getAttribute("userName");
 		
@@ -29,7 +29,7 @@ public class ReqRedirectedServlet2 extends HttpServlet {
 		
 		
 		//Print the data to the client browser via the PrintWriter object reference "out"
-		out.println(" The user logged in is : "+userName+" and redirected to this servlet using sendRedirect - Session object");
+		out.println(" The user logged in is : "+userName+" and redirected to this servlet(\"ReqRedirectedServet2\") using sendRedirect - Session object");
 
 	}
 

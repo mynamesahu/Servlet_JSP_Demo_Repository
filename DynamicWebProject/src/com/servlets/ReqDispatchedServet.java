@@ -26,7 +26,7 @@ public class ReqDispatchedServet extends HttpServlet {
 		
 		
 		//Print the data to the client browser via the PrintWriter object reference "out"
-		out.println(" The user logged in is : "+userName+" and forwarded to this servlet using RequestDispatcher");
+		out.println(" The user logged in is : "+userName+" and forwarded to this servlet(\"ReqDispatchedServet\") using RequestDispatcher");
 	}
 
 	
