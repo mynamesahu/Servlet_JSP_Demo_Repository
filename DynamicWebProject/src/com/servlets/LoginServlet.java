@@ -45,8 +45,8 @@ public class LoginServlet extends HttpServlet {
 						req.setAttribute("userName", userName);
 						
 						//Get the RequestDispatcher object 
-						RequestDispatcher rd = req.getRequestDispatcher("reqDispatch");					// where 'reqDispatch' is the url-pattern for the servlet (ReqDispatchedServlet) 
-																										// as described in "web.xml" or as mentioned in the "ReqDispatchedServlet" servlet file itself as an "annotation"
+						RequestDispatcher rd = req.getRequestDispatcher("reqDispatch");				// where 'reqDispatch' is the url-pattern for the servlet (ReqDispatchedServlet) 
+																									// as described in "web.xml" or as mentioned in the "ReqDispatchedServlet" servlet file itself as an "annotation"
 						
 						//Dispatch the original request to another servlet ("ReqDispatchedServet")
 						rd.forward(req, res);
@@ -60,9 +60,10 @@ public class LoginServlet extends HttpServlet {
 					//2- Using sendRedirect with "URL Re-writing"
 					//-------------------------------------------
 					
-//						//Redirect the request to another servlet ("ReqRedirectedServlet1") modifying the URL with the user data being passed as a query string
-//						res.sendRedirect("reqRedirected1?userName="+userName);							// where 'reqRedirected1' is the url-pattern for the servlet (ReqRedirectedServlet1) 
-//																										// as described in "web.xml" or as mentioned in the "ReqRedirectedServlet1" servlet file itself as an "annotation"					
+//						//Redirect the request to another servlet ("ReqRedirectedServlet1") 
+						//modifying the URL with the user data being passed as a query string
+//						res.sendRedirect("reqRedirected1?userName="+userName);						// where 'reqRedirected1' is the url-pattern for the servlet (ReqRedirectedServlet1) 
+//																									// as described in "web.xml" or as mentioned in the "ReqRedirectedServlet1" servlet file itself as an "annotation"					
 					
 					
 					
@@ -82,8 +83,8 @@ public class LoginServlet extends HttpServlet {
 //						session.setAttribute("userName", userName);
 //						
 //						//Redirect the request to another servlet("ReqRedirectedServlet2")
-//						res.sendRedirect("reqRedirected2");												// where 'reqRedirected2' is the url-pattern for the servlet ("ReqRedirectedServlet2") 
-//																										// as described in "web.xml" or as mentioned in the "ReqRedirectedServlet2" servlet file itself as an "annotation"
+//						res.sendRedirect("reqRedirected2");											// where 'reqRedirected2' is the url-pattern for the servlet ("ReqRedirectedServlet2") 
+//																									// as described in "web.xml" or as mentioned in the "ReqRedirectedServlet2" servlet file itself as an "annotation"
 					
 					
 					
@@ -110,7 +111,9 @@ public class LoginServlet extends HttpServlet {
 //						res.addCookie(cookie);
 //						
 //						//Redirect the request to the servlet("ReqRedirectedServlet3") and the cookie object is sent implicitly
-//						res.sendRedirect("reqRedirected3");
+//						res.sendRedirect("reqRedirected3");											// where 'reqRedirected3' is the url-pattern for the servlet ("ReqRedirectedServlet3") 
+//																									// as described in "web.xml" or as mentioned in the "ReqRedirectedServlet3" servlet file itself as an "annotation"
+						
 	
 		
 		} else { // if the log in is not a valid User 
