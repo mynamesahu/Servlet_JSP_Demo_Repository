@@ -10,14 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/add")
-public class AddServlet extends HttpServlet {
-	
-
+@WebServlet("/reqRedirected1")
+public class ReqRedirectedServlet1 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+   
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
 		//Retrieve the data from the request object and Cast to string
-		String userName = (String)req.getAttribute("userName");
+		String userName = (String)req.getParameter("userName");
 		
 		
 		
@@ -27,13 +28,14 @@ public class AddServlet extends HttpServlet {
 		
 		
 		//Print the data to the client browser via the PrintWriter object reference "out"
-		out.println(" The user logged in is : "+userName+" and then forwarded by LoginServlet to perform add operation");
-			
+		out.println(" The user logged in is : "+userName+" and redirected to this servlet using sendRedirect - URL Rewriting");
+
 	}
 
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+		doGet(req, res);
 	}
 
 }
