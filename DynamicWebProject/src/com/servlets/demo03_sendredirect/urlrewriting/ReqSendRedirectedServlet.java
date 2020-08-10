@@ -1,4 +1,4 @@
-package com.servlets;
+package com.servlets.demo03_sendredirect.urlrewriting;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/reqRedirected1")
-public class ReqRedirectedServlet1 extends HttpServlet {
+@WebServlet("/reqRedirectByURLRewriting")
+public class ReqSendRedirectedServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
    
@@ -28,7 +28,7 @@ public class ReqRedirectedServlet1 extends HttpServlet {
 		
 		
 		//Print the data to the client browser via the PrintWriter object reference "out"
-		out.println(" The user logged in is : "+userName+" and redirected to this servlet(\"ReqRedirectedServet1\") using sendRedirect - URL Rewriting");
+		out.println(" The user logged in is : "+userName+" and redirected to this servlet(\"ReqRedirectedServet\") using sendRedirect - URL Rewriting");
 
 	}
 

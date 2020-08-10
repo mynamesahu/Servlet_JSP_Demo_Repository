@@ -1,4 +1,4 @@
-package com.servlets;
+package com.servlets.demo03_sendredirect.cookies;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,16 +10,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+//import org.apache.tomcat.util.http.parser.Cookie;
+import javax.servlet.http.Cookie;
 
-@WebServlet("/reqRedirected2")
-public class ReqRedirectedServlet2 extends HttpServlet {
+@WebServlet("/reqRedirectByCookie")
+public class ReqSendRedirectedServlet extends HttpServlet {
 	       
     //doGet() method
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
-		//Retrieve the data from the session object
-		HttpSession session = req.getSession();
-		String userName = (String)session.getAttribute("userName");
+		//Retrieve the data from the Cookies
+		
+		// First get the array of cookies from the request object
+		Cookie[] cookies = req.getCookies();   
+		
+		String userName = "";
+		
+		//Iterate through all the cookies of the "cookies" array
+		for(Cookie c : cookies) {
+			
+			//Check if there is a cookie named "userName" and then get the corresponding value
+			if (c.getName().equalsIgnoreCase("userName"))
+					
+					// Store the value in a variable
+					userName = c.getValue();
+		}
 		
 		
 		
@@ -29,7 +44,7 @@ public class ReqRedirectedServlet2 extends HttpServlet {
 		
 		
 		//Print the data to the client browser via the PrintWriter object reference "out"
-		out.println(" The user logged in is : "+userName+" and redirected to this servlet(\"ReqRedirectedServet2\") using sendRedirect - Session object");
+		out.println(" The user logged in is : "+userName+" and redirected to this servlet(\"ReqRedirectedServet\") using sendRedirect - Cookies");
 
 	}
 
